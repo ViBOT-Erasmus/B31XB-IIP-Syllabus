@@ -1,0 +1,269 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%% LE2I beamer template
+%% Guillaume Lemaitre, October 2014
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} 
+\usetheme{le2i} 
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+\usepackage{amsthm}
+%% amsmath for math environment
+\usepackage{amsmath}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\sign}{sign}
+
+%% figure package
+\usepackage{epsf,graphicx}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+\usepackage{transparent}
+
+%% In order to draw some graphs
+\usepackage{tikz,xifthen}
+\usepackage{tikz-qtree}
+\usepackage{adjustbox}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{fit}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{shapes,arrows,shadows}
+\usetikzlibrary{calc,decorations.pathreplacing,decorations.markings,positioning}
+\usetikzlibrary{snakes,decorations.text,shapes,patterns}
+% \usepackage{scalefnt,lmodern,booktabs}
+
+%% Package for cross and tick symbols
+\usepackage{pifont}
+\newcommand{\tick}{\color{green!60!black!80}\ding{51}}
+\newcommand{\cross}{\color{red!60!black!80}\ding{55}}
+
+\title{Introduction to Image Processing}
+\author{Guillaume Lema\^itre \\ \texttt{guillaume.lemaitre@udg.edu}}
+\date{Course syllabus \\ 16\textsuperscript{th} Sept. 2015}
+
+\institute{Universit\'e de Bourgogne} 
+
+%% Uncomment if you want to avoid thousand of bullet inside the menu
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\slideentry}{\advance\beamer@xpos by1\relax}{}{}{}
+% \def\beamer@subsectionentry#1#2#3#4#5{\advance\beamer@xpos by1\relax}%
+% \makeatother
+
+\begin{document}
+
+% Show the title page
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Show the table of contents
+\begin{frame}
+  \tableofcontents[sectionstyle=show,subsectionstyle=show,subsubsectionstyle=hide]
+\end{frame}
+
+\section{Syllabus}
+
+\subsection{Important Stuff}
+
+\begin{frame}
+  \frametitle{Important Stuff}
+  % \framesubtitle{A Kick-Ass Title Subtitle}
+  \begin{block}{Assessment}
+    \begin{itemize}
+    \item Mid-semester exam at the beginning of November (30 \%)
+    \item Final exam at the end of the module (50 \%)
+    \item Project with viva (20 \%)
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Approximate Schedule}
+
+\begin{frame}
+  \frametitle{Approximate Schedule}
+  % \framesubtitle{A Kick-Ass Title Subtitle}
+  \only<1>{\begin{block}{Topic --- Load}
+      \begin{enumerate}
+      \item Digital image fundamentals (2h)
+      \item Image enhancement in the spatial domain (3h)
+      \item Spatial filtering (3h)
+      \item Filtering in the frequency domain (3h)
+      \item Restoration (2h)
+      \item Introduction to the wavelet analysis (2h)
+      \item Color space (2h)
+      \item Mathematical morphology (2h)
+      \item Image segmentation (6h)
+      \end{enumerate}
+    \end{block}}
+  
+  \only<2>{\begin{block}{Additionally ...}
+      \begin{itemize}
+      \item 2 practises of 2h
+      \item 2 practises of 3h
+      \item Project in team
+      \end{itemize}
+    \end{block}}
+\end{frame}
+
+\subsection{Textbooks}
+
+\begin{frame}
+  \frametitle{Approximate Schedule}
+  % \framesubtitle{A Kick-Ass Title Subtitle}
+  \begin{block}{Topic --- Load}
+    \begin{itemize}
+    \item \textbf{R. Gonzales \& R. Woods}, ``Digital Image Processing''
+    \item \textbf{J. S. Lim}, ``Two Dimensional Signal and Image Processing''
+    \item \textbf{J. Russ}, ``The Image Processing Handbook''
+    \item \textbf{W. K. Pratt}, ``Digital Image Processing''
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Prerequisites}
+
+\begin{frame}
+  \frametitle{Prerequisites}
+  % \framesubtitle{A Kick-Ass Title Subtitle}
+  \begin{block}{Requirements}
+    \begin{columns}
+      \begin{column}{.75\linewidth}
+        \begin{itemize}
+        \item<1-> Do you have a notebook?
+        \item<2-> Do you have a linux distribution installed?
+        \item<3->[$\rightarrow$] Install one!!! \texttt{http://www.ubuntu.com}
+        \item<4-> Did you ever use python?
+        \item<5->[$\rightarrow$] Install it!!! \textit{http://continuum.io/downloads}
+        \item<6-> Did you ever use GitHub?
+        \item<7->[$\rightarrow$] Start now!!! \textit{https://github.com}
+        \item<7-> \textit{https://github.com/ViBOT-Erasmus/B31XB-IIP-Syllabus}
+        \end{itemize}
+      \end{column}
+      \begin{column}{.3\linewidth}
+        \onslide<3->{\begin{figure}
+            \centering
+            \includegraphics[width=1.\textwidth]{./images/ubuntu.png}
+          \end{figure}}
+        \onslide<5->{\begin{figure}
+            \centering
+            \includegraphics[width=.7\textwidth]{./images/anaconda.png}
+          \end{figure}}
+      \end{column}
+    \end{columns}    
+  \end{block}
+\end{frame}
+
+\section{Introduction to DIP}
+
+\subsection{What is a digital image?}
+
+\begin{frame}
+  \frametitle{Introduction to DIP}
+  \framesubtitle{What is a digital image?}
+  \begin{block}{Type of digital images}
+    \begin{columns}
+      \begin{column}{.4\linewidth}
+        \begin{itemize}
+        \item<1-> Photographs
+        \item<2-> Sonars
+        \item<3-> Infrared cameras
+        \item<4-> Ultrasound
+        \item<5-> X-rays
+        \item<6-> Magnetic resonance imaging
+        \end{itemize}
+      \end{column}
+      \begin{column}{.6\linewidth}
+        \only<1>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/photo.jpg}
+          \end{figure}}
+        \only<2>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/sonar.png}
+          \end{figure}}
+        \only<3>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/ir.jpg}
+          \end{figure}}
+        \only<4>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/us.jpg}
+          \end{figure}}
+        \only<5>{\begin{figure}
+            \centering
+            \includegraphics[width=.7\textwidth]{./images/intro/xray.jpg}
+          \end{figure}}
+        \only<6>{\begin{figure}
+            \centering
+            \includegraphics[width=.7\textwidth]{./images/intro/mri.jpg}
+          \end{figure}}
+      \end{column}
+    \end{columns}    
+  \end{block}
+\end{frame}
+
+\subsection{Application examples}
+
+\begin{frame}
+  \frametitle{Introduction to DIP}
+  % \framesubtitle{Application examples}
+  \begin{block}{Applications}
+    \begin{columns}
+      \begin{column}{.4\linewidth}
+        \begin{itemize}
+        \item<1-> Biomedical
+        \item<2-> Cartography
+        \item<3-> Land monitoring
+        \item<4-> Inspection
+        \item<5-> Surveillance
+        \item<6-> Biometrics
+        \item<7-> Enhanced visualisation
+        \item<8-> Content-based image retrieval 
+        \end{itemize}
+      \end{column}
+      \begin{column}{.6\linewidth}
+        \only<1>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/brain.jpg}
+          \end{figure}}
+        \only<2>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/cart.jpeg}
+          \end{figure}}
+        \only<3>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/lidar.jpg}
+          \end{figure}}
+        \only<4>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/beer.jpg}
+          \end{figure}}
+        \only<5>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/surveillance.jpg}
+          \end{figure}}
+        \only<6>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/csi.jpg}
+          \end{figure}}
+        \only<7>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/enhancement.jpg}
+          \end{figure}}
+        \only<8>{\begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{./images/intro/retrieval.jpg}
+          \end{figure}}
+      \end{column}
+    \end{columns}    
+  \end{block}
+\end{frame}
+
+\end{document}
