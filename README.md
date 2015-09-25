@@ -1,4 +1,4 @@
-# B31XB - Introduction to Image Processing
+B1;3409;0c# B31XB - Introduction to Image Processing
 
 **Table of Contents**
 - [Information about the module](#information-about-the-module)
@@ -24,6 +24,7 @@ The following framework will be studied through the module:
 ### ViBOT & MsCV
 
 * Lecture sessions
+
 1. [Lecture 1: Fondamentals in Digital Image Processing](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-1)
 1. [Lecture 2: Intensity Transformations and Spatial Filtering](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-2)
 
