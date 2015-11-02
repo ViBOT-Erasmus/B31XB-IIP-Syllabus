@@ -25,6 +25,8 @@ To provide a basic knowledge of the digital image world.
 1. [Lecture 1: Fondamentals in Digital Image Processing](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-1)
 1. [Lecture 2: Intensity Transformations and Spatial Filtering](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-2)
 1. [Lecture 3: Fourier Transform and Frequency Filtering](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-3)
+1. [Lecture 4: Restoration - Image denoising](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-4)
+1. [Lecture 5: Color Image Processing](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-5)
 
 * Practise sessions
 
