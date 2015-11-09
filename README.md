@@ -30,6 +30,9 @@ To provide a basic knowledge of the digital image world.
 
 * Practise sessions
 
+1. [Prerequisite: Scientific Python Lectures](https://github.com/ContinuumIO/scientific-python-lectures)
+1. [Practise 1: Introduction to skimage](https://github.com/ViBOT-Erasmus/B31XB-IIP-Introduction-skimage)
+
 ## Software prerequisite
 
 The practises are using Python. We advise you to use the Anaconda bundle. Download Anaconda [here](http://continuum.io/downloads) and follow the instructions.
