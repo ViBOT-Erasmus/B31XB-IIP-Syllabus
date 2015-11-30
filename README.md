@@ -28,7 +28,7 @@ To provide a basic knowledge of the digital image world.
 1. [Lecture 4: Image denoising](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-4)
 1. [Lecture 5: Color Image Processing](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-5)
 1. Lecture 6: Image Segmentation
-1. Lecture 7: Morphological Image Processing
+1. [Lecture 7: Morphological Image Processing](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-7)
 1. [Lecture 8: Image Restoration](https://github.com/ViBOT-Erasmus/B31XB-IIP-Lecture-8)
 
 * Practise sessions
